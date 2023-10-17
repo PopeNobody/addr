@@ -12,7 +12,22 @@
     "@bitauth/libauth": "^2.0.0-alpha.8",
     "@types/node": "^12.7.8",
     "bip39": "^3.0.4",
-    "exec-pgp": "^0.0.1",
     "typescript": "^4.9.5"
+  },
+  "scripts": {
+    "test": "lerna run test --ignore cashscript-examples",
+    "lint": "lerna run lint --ignore cashscript-examples",
+    "preproof:opt": "cp packages/utils/src/cashproof-optimisations.ts opt.equiv && sed -i '' '/`/d' opt.equiv",
+    "proof:opt": "yarn cashproof opt.equiv",
+    "postproof:opt": "rm opt.equiv",
+    "proof:0.2.0": "yarn cashproof packages/cashc/test/cashproof/0.1.2=0.2.0.equiv",
+    "proof": "yarn proof:opt && yarn proof:0.2.0",
+    "cashproof": "python3 node_modules/cashproof/run.py",
+    "examples": "ts-node-esm examples/p2pkh.ts && ts-node-esm examples/transfer_with_timeout.ts && ts-node-esm examples/hodl_vault.ts",
+    "coverage": "codecov",
+    "postinstall": "lerna bootstrap && lerna run build --ignore cashscript-examples",
+    "spellcheck": "cspell lint '**' --no-progress --must-find-files",
+    "update-version": "ts-node-esm update-version.ts",
+    "publish-all": "lerna publish from-package"
   }
 }
