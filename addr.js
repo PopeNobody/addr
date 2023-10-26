@@ -1,10 +1,8 @@
 // @ts-ignore
 import { mnemonic } from './dist/calcMnemonic.js';
-console.log(mnemonic)
-
+console.log(mnemonic);
 // //import fs from 'fs';
 // import {hash160} from '@cashscript/utils';
-
 // import {deriveHdPath, deriveHdPrivateNodeFromSeed, encodeCashAddress ,} from '@bitauth/libauth';
 // import {mnemonicToSeed} from 'bip39';
 // import fetch from 'node-fetch';
