@@ -1,2 +1,3 @@
 all:
-	vi-node addr.js
+	npm run build
+	npm run run
