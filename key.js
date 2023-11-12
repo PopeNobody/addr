@@ -2,51 +2,14 @@ import { mnemonic } from './mnemonic.js';
 import coininfo from 'coininfo';
 import { mnemonicToSeed } from 'bip39';
 import { deriveHdPrivateNodeFromSeed } from '@bitauth/libauth';
+import {chains} from "./chains.js";
+import {HDRoot} from "./hdroot.js";
 async function run() {
-    class HDRoot {
-        root;
-        seed;
-        acct;
-        constructor(seed) {
-            this.acct = {};
-            this.seed = seed;
-            this.root = deriveHdPrivateNodeFromSeed(this.seed);
-        }
-    }
     const seed = await mnemonicToSeed(mnemonic);
     const root = new HDRoot(seed);
-    class Chain {
-        sym;
-        info;
-        constructor(sym) {
-            this.sym = sym;
-            this.info = coininfo(sym);
-            console.log(this);
-        }
-    }
-    class Chains {
-        chains = new Map();
-        Chains() {
-            const chains = ["btc", "bch", "dash"];
-            for (const chain of chains) {
-                this.create(chain);
-            }
-        }
-        get(sym) {
-            return this.chains.get(sym);
-        }
-        create(sym) {
-            const old = this.get(sym);
-            if (old)
-                throw new Error(`chain ${sym} already exists`);
-            this.chains.set(sym, new Chain(sym));
-            return this.get(sym);
-        }
-    }
-    const chains = new Chains();
-    console.log(chains.get("bch"));
-    console.log(chains.get("btc"));
-    console.log(chains);
+    const btc = chains.get("btc");
+    console.log(btc);
+    console.log(btc.sym);
     return "done";
 }
 run().then(console.log).catch(console.error);
