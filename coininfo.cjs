@@ -1,51 +1,41 @@
 const Buffer = require('safe-buffer').Buffer;
 
 const coins = [
-  require('./coins/bch'),
-  require('./coins/blk'),
-  require('./coins/btc'),
-  require('./coins/btg'),
-  require('./coins/cbn'),
-  require('./coins/city'),
-  require('./coins/dash'),
-  require('./coins/dnr'),
-  require('./coins/dcr'),
-  require('./coins/dgb'),
-  require('./coins/doge'),
-  require('./coins/grs'),
-  require('./coins/ltc'),
-  require('./coins/via'),
-  require('./coins/mona'),
-  require('./coins/nbt'),
-  require('./coins/nmc'),
-  require('./coins/ppc'),
-  require('./coins/qtum'),
-  require('./coins/rvn'),
-  require('./coins/rdd'),
-  require('./coins/vtc'),
-  require('./coins/x42'),
-  require('./coins/zec')
+  require('./chains/bch.cjs'),
+  // require('./chains/blk.cjs'),
+  require('./chains/btc.cjs'),
+  // require('./chains/btg.cjs'),
+  // require('./chains/cbn.cjs'),
+  // require('./chains/city.cjs'),
+  require('./chains/dash.cjs'),
+  // require('./chains/dnr.cjs'),
+  // require('./chains/dcr.cjs'),
+  // require('./chains/dgb.cjs'),
+  require('./chains/doge.cjs'),
+  // require('./chains/grs.cjs'),
+  // require('./chains/ltc.cjs'),
+  // require('./chains/via.cjs'),
+  // require('./chains/mona.cjs'),
+  // require('./coins/nbt.cjs'),
+  // require('./coins/nmc.cjs'),
+  // require('./coins/ppc.cjs'),
+  // require('./coins/qtum.cjs'),
+  // require('./coins/rvn.cjs'),
+  // require('./coins/rdd.cjs'),
+  // require('./coins/vtc.cjs'),
+  // require('./coins/x42.cjs'),
+  // require('./coins/zec.cjs')
 ]
 
-var supportedCoins = {}
+const coininfo = {}
 
 coins.forEach(function (coin) {
   const unit = coin.main.unit.toLowerCase()
   const name = coin.main.name.toLowerCase()
   coin.main.testnet = false
-  supportedCoins[unit] = coin.main
-  supportedCoins[name] = coin.main
+  coininfo[unit] = coin.main
+  coininfo[name] = coin.main
 })
-
-function coininfo (input) {
-  const coin = input.toLowerCase()
-
-  if (!(coin in supportedCoins)) {
-    return null
-  } else {
-    return supportedCoins[coin]
-  }
-}
 
 coins.forEach(function (coin) {
   coininfo[coin.main.name.toLowerCase()] = coin
@@ -86,4 +76,4 @@ coins.forEach(function (coin) {
 //   })
 // }
 
-module.exports = coininfo
+module.exports =  coininfo;

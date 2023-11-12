@@ -1,5 +1,5 @@
 import { mnemonic } from './mnemonic.js';
-import coininfo from 'coininfo';
+import coininfo from "./coininfo.cjs";
 import { mnemonicToSeed } from 'bip39';
 import { deriveHdPrivateNodeFromSeed } from '@bitauth/libauth';
 import {chains} from "./chains.js";
