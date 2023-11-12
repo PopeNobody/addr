@@ -1,6 +1,7 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="key.js" type="NodeJSConfigurationType" editBeforeRun="true" focusToolWindowBeforeRun="true" nameIsGenerated="true" path-to-js-file="key.js" working-dir="$PROJECT_DIR$">
+  <configuration default="false" name="key.js" type="NodeJSConfigurationType" focusToolWindowBeforeRun="true" nameIsGenerated="true" path-to-js-file="key.js" working-dir="$PROJECT_DIR$">
     <method v="2">
+      <option name="ToolBeforeRunTask" enabled="true" actionId="Tool_External Tools_git commit" />
       <option name="TypeScript.Before.Run" enabled="true" FAIL_ON_ERROR="true" CONFIG_PATH="$PROJECT_DIR$/tsconfig.json" />
     </method>
   </configuration>

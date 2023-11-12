@@ -1,48 +1,64 @@
 import { mnemonic } from './mnemonic.js'
-// import {
-//   deriveHdPath,
-//   deriveHdPrivateNodeFromSeed,
-//   encodeCashAddress,
-//   secp256k1
-// } from '@bitauth/libauth';
-import {mnemonicToSeed} from 'bip39';
-
-const seed: string = await mnemonicToSeed(mnemonic).then(seed=>{
-  return seed.toString();
-});
-
 import coininfo from 'coininfo';
-class Coin {
-  symbol: string;
-  constructor(symbol : string) {
-    this.symbol=symbol;
-  }
-}
+import {mnemonicToSeed} from 'bip39';
+import {
+  deriveHdPath,
+  deriveHdPrivateNodeFromSeed,
+  encodeCashAddress, HdPrivateNode,
+  secp256k1
+} from '@bitauth/libauth';
+import {hash160} from '@cashscript/utils';
 
-// // import {hash160} from '@cashscript/utils';
-//class Wallet {
-//  seed: Uint8Array;
-//  constructor(seed) {
-//    this.seed=seed;
-//    const root = deriveHdPrivateNodeFromSeed(seed, true);
-//  }
-//}
+async  function run() {
+  class HDRoot {
+    private readonly root: HdPrivateNode;
+    private readonly seed : Buffer;
+    private readonly acct : Object;
+    constructor(seed: Buffer) {
+      this.acct={};
+      this.seed = seed;
+      this.root= deriveHdPrivateNodeFromSeed(this.seed);
+    }
+  }
+  const seed = await mnemonicToSeed(mnemonic);
+  const root = new HDRoot(seed);
+  class Coin {
+    readonly sym : string;
+    readonly info;
+    constructor(sym: string) {
+      this.sym=sym;
+      this.info=coininfo(sym);
+      console.log(this);
+    }
+  }
+  const bch = new Coin("bch");
+  const btc = new Coin("btc");
+  return "done";
+}
+run().then(console.log).catch(console.error);
+  // class Account {
+
+  // }
+  // class Wallet {
+  //   readonly root : HDRoot ;
+  //   readonly coins : Map<string,Coin> ;
+  //   constructor(root : HDRoot , coins : Coin[] ) {
+  //     this.root=root;
+  //     this.coins=new Map<string, Coin>();
+  //     for(const coin of coins ) {
+  //       const sym=coin.sym;
+  //     }
+
+    // }
+    // getCoin(sym : string) {
+
+  //   }
+  // }
 //new Wallet(seed);
-// import coininfo from 'coininfo';
-// import CoinKey from 'coinkey';
 // global.keys=Object.keys;
 // interface CoinMap {
 //   [key: string], Coin;
 // }
-// const list = [ 'bch', 'btc', 'dash', 'doge', 'ltc' ];
-// const bases={
-//   bch:"m/44'/145'/0'/0/",
-//   btc:"m/44'/145'/0'/0/",
-//   doge:"m/44'/145'/0'/0/",
-//   dash:"m/44'/145'/0'/0/",
-//   lts:"m/44'/145'/0'/0/"
-// }
-//
 // class Coin {
 //   keys=[];
 //   getKey(idx) {
