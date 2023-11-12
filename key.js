@@ -15,7 +15,7 @@ async function run() {
     }
     const seed = await mnemonicToSeed(mnemonic);
     const root = new HDRoot(seed);
-    class Coin {
+    class Chain {
         sym;
         info;
         constructor(sym) {
@@ -24,8 +24,29 @@ async function run() {
             console.log(this);
         }
     }
-    const bch = new Coin("bch");
-    const btc = new Coin("btc");
+    class Chains {
+        chains = new Map();
+        Chains() {
+            const chains = ["btc", "bch", "dash"];
+            for (const chain of chains) {
+                this.create(chain);
+            }
+        }
+        get(sym) {
+            return this.chains.get(sym);
+        }
+        create(sym) {
+            const old = this.get(sym);
+            if (old)
+                throw new Error(`chain ${sym} already exists`);
+            this.chains.set(sym, new Chain(sym));
+            return this.get(sym);
+        }
+    }
+    const chains = new Chains();
+    console.log(chains.get("bch"));
+    console.log(chains.get("btc"));
+    console.log(chains);
     return "done";
 }
 run().then(console.log).catch(console.error);
