@@ -31,10 +31,16 @@ const seed = await mnemonicToSeed(mnemonic);
 const root = new HDRoot(seed);
 class Address {
 }
+function getSym(coin) {
+    return sym_;
+}
 class Coin {
-    sym;
-    constructor(sym) {
-        this.sym = sym;
+    sym_;
+    constructor() {
+        this.sym_ = sym;
+    }
+    get sym() {
+        return this.sym_;
     }
 }
 class Account {
