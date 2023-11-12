@@ -1,4 +1,4 @@
-import coininfo from "coininfo";
+import coininfo from "./coininfo.cjs";
 
 export class Chain {
     sym;
@@ -12,7 +12,6 @@ export class Chains {
     chains;
     constructor() {
         this.chains = new Map();
-        const chains = coininfo;
         for (const chain of chains) {
             this.create(chain);
         }

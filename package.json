@@ -12,7 +12,6 @@
     "@cashscript/utils": "^0.9.1",
     "@types/node": "^12.7.8",
     "bip39": "^3.0.4",
-    "coininfo": "^5.2.1",
     "coinkey": "^3.0.0",
     "node-fetch": "^3.3.2",
     "safe-buffer": "^5.2.1",
