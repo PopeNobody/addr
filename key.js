@@ -1,13 +1,17 @@
+import './saveCoin.js';
 import { mnemonic } from './mnemonic.js';
 import coininfo from "./coininfo.cjs";
 import { mnemonicToSeed } from 'bip39';
 import { deriveHdPrivateNodeFromSeed } from '@bitauth/libauth';
 import {chains} from "./chains.js";
 import {HDRoot} from "./hdroot.js";
+import CoinKey from 'coinkey';
+import {writeFileSync} from "fs";
 async function run() {
     const seed = await mnemonicToSeed(mnemonic);
     const root = new HDRoot(seed);
     const btc = chains.get("btc");
+    const key = new CoinKey()
     console.log(btc);
     console.log(btc.sym);
     return "done";

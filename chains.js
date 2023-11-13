@@ -5,14 +5,15 @@ export class Chain {
     info;
     constructor(sym) {
         this.sym = sym;
-        this.info = coininfo(sym);
+        this.info = coininfo[sym];
     }
 }
 export class Chains {
     chains;
     constructor() {
         this.chains = new Map();
-        for (const chain of chains) {
+        for (const chain of Object.keys(coininfo)) {
+            console.log(chain);
             this.create(chain);
         }
     }

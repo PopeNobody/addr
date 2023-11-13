@@ -1,45 +1,23 @@
-const Buffer = require('safe-buffer').Buffer;
 
 const coins = [
   require('./chains/bch.cjs'),
-  // require('./chains/blk.cjs'),
   require('./chains/btc.cjs'),
-  // require('./chains/btg.cjs'),
-  // require('./chains/cbn.cjs'),
-  // require('./chains/city.cjs'),
   require('./chains/dash.cjs'),
-  // require('./chains/dnr.cjs'),
-  // require('./chains/dcr.cjs'),
-  // require('./chains/dgb.cjs'),
   require('./chains/doge.cjs'),
-  // require('./chains/grs.cjs'),
-  // require('./chains/ltc.cjs'),
-  // require('./chains/via.cjs'),
-  // require('./chains/mona.cjs'),
-  // require('./coins/nbt.cjs'),
-  // require('./coins/nmc.cjs'),
-  // require('./coins/ppc.cjs'),
-  // require('./coins/qtum.cjs'),
-  // require('./coins/rvn.cjs'),
-  // require('./coins/rdd.cjs'),
-  // require('./coins/vtc.cjs'),
-  // require('./coins/x42.cjs'),
-  // require('./coins/zec.cjs')
 ]
 
 const coininfo = {}
 
 coins.forEach(function (coin) {
   const unit = coin.main.unit.toLowerCase()
-  const name = coin.main.name.toLowerCase()
   coin.main.testnet = false
-  coininfo[unit] = coin.main
-  coininfo[name] = coin.main
+  coininfo[unit]=coin;
 })
 
-coins.forEach(function (coin) {
-  coininfo[coin.main.name.toLowerCase()] = coin
-})
+// coins.forEach(function (coin) {
+//   console.log(coin.main.name.toLowerCase());
+//   coininfo[coin.main.name.toLowerCase()] = coin
+// })
 
 // function toBitcoinJS () {
 //   return Object.assign({}, this, {
