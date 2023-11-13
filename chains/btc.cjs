@@ -43,6 +43,7 @@ var main = Object.assign({}, {
     scripthash: 0x05
   }
 }, common)
+saveCoin('btc','main',main);
 var test = Object.assign({}, {
   hashGenesisBlock: '000000000933ea01ad0ee984209779baaec3ced90fa3f408719526f8d77f4943',
   port: 18333,
