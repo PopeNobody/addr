@@ -12,8 +12,7 @@ export class Chains {
     chains;
     constructor() {
         this.chains = new Map();
-        for (const chain of Object.keys(coininfo)) {
-            console.log(chain);
+        for (const chain of chains) {
             this.create(chain);
         }
     }
