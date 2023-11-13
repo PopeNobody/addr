@@ -1,0 +1,24 @@
+{
+  "hashGenesisBlock": "0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206",
+  "port": 18444,
+  "portRpc": 18332,
+  "protocol": {
+    "magic": 3669344250
+  },
+  "bech32": "bcrt",
+  "seedsDns": [],
+  "versions": {
+    "bip32": {
+      "private": 70615956,
+      "public": 70617039
+    },
+    "bip44": 1,
+    "private": 239,
+    "public": 111,
+    "scripthash": 196
+  },
+  "name": "Bitcoin",
+  "per1": 100000000,
+  "unit": "BTC",
+  "messagePrefix": "\u0018Bitcoin Signed Message:\n"
+}
