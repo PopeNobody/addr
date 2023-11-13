@@ -1,0 +1,22 @@
+{
+  "hashGenesisBlock": "bb0a78264637406b6360aad926284d544d7049f45189db5664f3c4d07350559e",
+  "port": 44556,
+  "protocol": {
+    "magic": 4240553948
+  },
+  "seedsDns": [
+    "testseed.jrn.me.uk"
+  ],
+  "versions": {
+    "bip32": {
+      "private": 70615956,
+      "public": 70617039
+    },
+    "bip44": 1,
+    "private": 241,
+    "public": 113,
+    "scripthash": 196
+  },
+  "name": "Dogecoin",
+  "unit": "DOGE"
+}

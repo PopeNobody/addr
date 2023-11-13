@@ -26,7 +26,7 @@ var main = Object.assign({}, {
     scripthash: 0x16
   }
 }, common)
-
+saveCoin('doge','main',main);
 var test = Object.assign({}, {
   hashGenesisBlock: 'bb0a78264637406b6360aad926284d544d7049f45189db5664f3c4d07350559e',
   port: 44556,
@@ -47,6 +47,7 @@ var test = Object.assign({}, {
     scripthash: 0xc4
   }
 }, common)
+saveCoin('doge','test',test);
 
 module.exports = {
   main,

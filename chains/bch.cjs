@@ -2,7 +2,7 @@
   info from:
     https://github.com/Bitcoin-ABC/bitcoin-abc/blob/master/src/chainparams.cpp
 */
-
+const saveCoin=global.saveCoin;
 var common = {
   name: 'BitcoinCash',
   per1: 1e8,
@@ -39,8 +39,8 @@ var main = Object.assign({}, {
     scripthash: 0x05
   }
 }, common)
-
-var test = Object.assign({}, {
+saveCoin('bch','main',main);
+const test = Object.assign({}, {
   hashGenesisBlock: '000000000933ea01ad0ee984209779baaec3ced90fa3f408719526f8d77f4943',
   port: 18333,
   portRpc: 18332,
@@ -65,6 +65,7 @@ var test = Object.assign({}, {
     scripthash: 0xc4
   }
 }, common)
+saveCoin('bch','test',test);
 
 var regtest = Object.assign({}, {
   hashGenesisBlock: '0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206',
@@ -85,6 +86,7 @@ var regtest = Object.assign({}, {
     scripthash: 0xc4
   }
 }, common)
+saveCoin('bch','regtest',regtest);
 
 module.exports = {
   main,

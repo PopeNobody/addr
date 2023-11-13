@@ -1,0 +1,28 @@
+{
+  "hashGenesisBlock": "000000000933ea01ad0ee984209779baaec3ced90fa3f408719526f8d77f4943",
+  "port": 18333,
+  "portRpc": 18332,
+  "protocol": {
+    "magic": 4109624820
+  },
+  "seedsDns": [
+    "testnet-seed.bitcoinabc.org",
+    "testnet-seed-abc.bitcoinforks.org",
+    "testnet-seed.bitprim.org",
+    "testnet-seed.deadalnix.me",
+    "testnet-seeder.criptolayer.net"
+  ],
+  "versions": {
+    "bip32": {
+      "private": 70615956,
+      "public": 70617039
+    },
+    "bip44": 1,
+    "private": 239,
+    "public": 111,
+    "scripthash": 196
+  },
+  "name": "BitcoinCash",
+  "per1": 100000000,
+  "unit": "BCH"
+}

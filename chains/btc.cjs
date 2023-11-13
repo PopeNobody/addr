@@ -3,6 +3,7 @@
     https://github.com/bitcoin/bitcoin/blob/master/src/chainparams.cpp
 */
 
+const {writeFileSync} = require("fs");
 var common = {
   name: 'Bitcoin',
   per1: 1e8,
@@ -42,7 +43,6 @@ var main = Object.assign({}, {
     scripthash: 0x05
   }
 }, common)
-
 var test = Object.assign({}, {
   hashGenesisBlock: '000000000933ea01ad0ee984209779baaec3ced90fa3f408719526f8d77f4943',
   port: 18333,
@@ -68,8 +68,9 @@ var test = Object.assign({}, {
     scripthash: 0xc4
   }
 }, common)
+saveCoin('btc','test',test);
 
-var regtest = Object.assign({}, {
+const regtest = Object.assign({}, {
   hashGenesisBlock: '0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206',
   port: 18444,
   portRpc: 18332,
@@ -89,32 +90,8 @@ var regtest = Object.assign({}, {
     scripthash: 0xc4
   }
 }, common)
-
-// source: https://github.com/btcsuite/btcd/blob/6867ff32788a1beb9d148e414d7f84f50958f0d2/chaincfg/params.go#L508
-var simnet = Object.assign({}, {
-  hashGenesisBlock: 'f67ad7695d9b662a72ff3d8edbbb2de0bfa67b13974bb9910d116d5cbd863e68',
-  port: 18555,
-  portRpc: 18556,
-  protocol: {
-    magic: 0x12141c16
-  },
-  bech32: 'sb',
-  seedsDns: [],
-  versions: {
-    bip32: {
-      private: 0x0420b900,
-      public: 0x0420bd3a
-    },
-    bip44: 115,
-    private: 0x64,
-    public: 0x3f,
-    scripthash: 0x7b
-  }
-}, common)
+saveCoin('btc','regtest',regtest);
 
 module.exports = {
   main,
-  test,
-  regtest,
-  simnet
 }

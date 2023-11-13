@@ -1,0 +1,23 @@
+{
+  "hashGenesisBlock": "1a91e3dace36e2be3bf030a65679fe821aa1d6ef92e7c9902eb318182c355691",
+  "port": 22556,
+  "protocol": {
+    "magic": 3233857728
+  },
+  "seedsDns": [
+    "seed.multidoge.org",
+    "seed2.multidoge.org"
+  ],
+  "versions": {
+    "bip32": {
+      "private": 49988504,
+      "public": 49990397
+    },
+    "bip44": 3,
+    "private": 158,
+    "public": 30,
+    "scripthash": 22
+  },
+  "name": "Dogecoin",
+  "unit": "DOGE"
+}
