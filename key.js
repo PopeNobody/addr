@@ -7,11 +7,15 @@ import {chains} from "./chains.js";
 import {HDRoot} from "./hdroot.js";
 import CoinKey from 'coinkey';
 import {writeFileSync} from "fs";
+
+function pubKeyAddress(root,chain) {
+  var bufVersion = util.bufferizeVersion(chains.versions.public)
+  return cs.encode(this.pubKeyHash, bufVersion)
+}
 async function run() {
     const seed = await mnemonicToSeed(mnemonic);
     const root = new HDRoot(seed);
     const btc = chains.get("btc");
-    const key = new CoinKey()
     console.log(btc);
     console.log(btc.sym);
     return "done";
