@@ -1,6 +1,5 @@
 import './saveCoin.js';
 import { mnemonic } from './mnemonic.js';
-import coininfo from "./coininfo.cjs";
 import { mnemonicToSeed } from 'bip39';
 import { deriveHdPrivateNodeFromSeed } from '@bitauth/libauth';
 import {chains} from "./chains.js";
@@ -8,39 +7,32 @@ import {HDRoot} from "./hdroot.js";
 import CoinKey from 'coinkey';
 import {writeFileSync} from "fs";
 
-function pubKeyAddress(root,chain) {
-  var bufVersion = util.bufferizeVersion(chains.versions.public)
-  return cs.encode(this.pubKeyHash, bufVersion)
+class Account {
+    chain;
+    eckey;
+    constructor(eckey, chain) {
+        this.eckey=eckey;
+        this.chain=chain;
+    }
 }
+function uint8ArrayToHexString(uint8Array) {
+    return Array.from(uint8Array, (byte) => byte.toString(16).padStart(2, '0')).join('');
+}
+
+
+
 async function run() {
     const seed = await mnemonicToSeed(mnemonic);
     const root = new HDRoot(seed);
+
     const btc = chains.get("btc");
-    console.log(btc);
-    console.log(btc.sym);
+    const prv = root.getPrivateKey(btc,0);
+    console.log(uint8ArrayToHexString(prv));
+//    const account = new Account(root,btc);
     return "done";
 }
 run().then(console.log).catch(console.error);
-// class Account {
-// }
-// class Wallet {
-//   readonly root : HDRoot ;
-//   readonly coins : Map<string,Coin> ;
-//   constructor(root : HDRoot , coins : Coin[] ) {
-//     this.root=root;
-//     this.coins=new Map<string, Coin>();
-//     for(const coin of coins ) {
-//       const sym=coin.sym;
-//     }
-// }
-// getCoin(sym : string) {
-//   }
-// }
 //new Wallet(seed);
-// global.keys=Object.keys;
-// interface CoinMap {
-//   [key: string], Coin;
-// }
 // class Coin {
 //   keys=[];
 //   getKey(idx) {

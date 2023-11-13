@@ -12,10 +12,10 @@
     "@cashscript/utils": "^0.9.1",
     "@types/node": "^12.7.8",
     "bip39": "^3.0.4",
-    "coinkey": "^3.0.0",
+    "coinstring": "^2.3.1",
     "node-fetch": "^3.3.2",
-    "safe-buffer": "^5.2.1",
-    "secp256k1": "^5.0.0"
+    "recursive-readdir-sync": "^1.0.6",
+    "safe-buffer": "^5.2.1"
   },
   "scripts": {
     "build": "tsc",
