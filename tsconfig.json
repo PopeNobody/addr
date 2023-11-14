@@ -1,0 +1,14 @@
+{
+   "compilerOptions" : {
+      "module" : "NodeNext",
+      "outDir" : "./dist",
+      "target" : "es2022",
+      "moduleResolution" : "NodeNext"
+   },
+   "exclude" : [
+      "node_modules"
+   ],
+   "include" : [
+      "**/*.ts"
+   ]
+}

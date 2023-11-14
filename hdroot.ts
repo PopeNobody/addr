@@ -1,5 +1,5 @@
 console.log("test");
-export {};
+
 // import {deriveHdPath, deriveHdPrivateNodeFromSeed} from "@bitauth/libauth";
 // 
 // export class HDRoot {
