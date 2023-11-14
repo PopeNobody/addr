@@ -1,7 +1,0 @@
-#!/bin/bash
-
-mkdir -p js
-make
-mv *.js js
-cd js
-node "$@"
