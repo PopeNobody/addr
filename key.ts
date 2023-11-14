@@ -1,5 +1,4 @@
 console.log("test");
-export {};
 // import './saveCoin.js';
 // import { mnemonic } from './mnemonic.js';
 // import { mnemonicToSeed } from 'bip39';

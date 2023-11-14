@@ -1,5 +1,4 @@
 console.log("test");
-export {};
 //import readdirSync from "recursive-readdir-sync";
 //import {readFileSync} from "fs";
 //

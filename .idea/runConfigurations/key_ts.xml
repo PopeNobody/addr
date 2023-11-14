@@ -1,0 +1,7 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="key.ts" type="NodeJSConfigurationType" focusToolWindowBeforeRun="true" nameIsGenerated="true" path-to-js-file="key.ts" working-dir="$PROJECT_DIR$">
+    <method v="2">
+      <option name="TypeScript.Before.Run" enabled="true" FAIL_ON_ERROR="true" CONFIG_PATH="tssconfig.json" />
+    </method>
+  </configuration>
+</component>
