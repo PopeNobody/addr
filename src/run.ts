@@ -9,52 +9,59 @@ import {
     deriveHdPath,
     deriveHdPrivateNodeFromSeed,
     encodeCashAddress,
-    hash160,
+    hash160, hash256,
     HdPrivateNodeValid,
-    secp256k1
+    secp256k1, binToBase58
 } from "@bitauth/libauth";
 
 interface AddressFormat {
    format(address: Uint8Array) : string;
 }
+class BitcoinFormat implements AddressFormat {
+  prefix= 0x00;
+  format(publicKeyHash: Uint8Array) : string {
+      const len = publicKeyHash.length;
+      const arr = new Uint8Array(len+5);
+      arr.set(publicKeyHash, 1);
+      const checksum = hash256(arr).subarray(0,4);
+      arr.set(checksum,len+1);
+      return binToBase58(arr);
+  }
+}
 class BitcoinCashFormat implements AddressFormat {
     type = CashAddressType.p2pkh;
-    prefix: CashAddressNetworkPrefix = CashAddressNetworkPrefix.mainnet;
     format(publicKeyHash: Uint8Array) {
-        return encodeCashAddress(this.prefix,this.type ,publicKeyHash);
+        console.log(publicKeyHash.length);
+        const prefix: CashAddressNetworkPrefix = CashAddressNetworkPrefix.mainnet;
+        return encodeCashAddress(prefix,this.type ,publicKeyHash);
     }
 }
 
-export class Chain {
+class Chain {
     sym: string;
-    hashGenesisBlock: string;
-    port: number;
-    portRpc: number;
-    magic: number;
-    seedDns: [];
     versions: Map<string,number>;
     name: string;
     per1: number;
     derivationPath;
+    formats;
     constructor(file : string) {
         if(!(this instanceof Chain))
             throw new Error("Not a Chain.  Call with new");
         const data = readJson(file);
         this.sym = data.unit.toLowerCase();
-        this.hashGenesisBlock=data.hashGenesisBlock;
-        this.port=data.port;
-        this.portRpc=data.portRpc;
-        this.magic=data.magic;
-        this.seedDns=data.seedDns;
         this.versions=data.versions;
         this.name=data.name;
         this.per1=data.per1;
         const bip44 = data.versions["bip44"];
         this.derivationPath=`m/44'/${bip44}'/0'/0`;
+        const formats=[];
+        if(this.sym==='bch') {
+            formats.push(new BitcoinCashFormat());
+        } else {
+            formats.push(new BitcoinFormat());
+        }
+        this.formats=formats;
     }
-    formats = [
-        new BitcoinCashFormat()
-    ];
     formatAddress(publicKeyHash: Uint8Array ) {
         const format = this.formats[0];
         if(format)
@@ -160,11 +167,9 @@ class Account {
             this.addresses[idx] = new Node(this,idx);
         return this.addresses[idx];
     }
-
     getDerivationPath() {
         return this.chain.derivationPath;
     }
-
     getAddress(idx: number) {
         const node = this.getNode(idx);
         return node.address;
@@ -177,26 +182,32 @@ class Wallet {
     accounts = new Map<string, Account>();
     constructor(syms: string[]) {
         this.seed = mnemonicToSeedSync(mnemonic);
-        console.log("sd:"+hex(this.seed));
         const node = deriveHdPrivateNodeFromSeed(this.seed);
         this.node = <HdPrivateNodeValid>node;
-        console.log("cc:"+hex(this.node.chainCode));
         for(let i=0;i<syms.length;i++) {
             const sym = syms[i];
             const account = new Account(this.node,sym);
             this.accounts.set(sym,account);
         }
     }
-
+    getSymbols() {
+      return [ ... this.accounts.keys() ];
+    }
     getAccount(bch: string) {
         const account = this.accounts.get(bch);
         if(account==null)
             throw new Error("account not found");
         return account;
     }
+    showAddrs() {
+      for( const ac of Array.from(this.accounts.values())){
+        console.log(ac.addresses);
+      }
+    }
 }
-const list = [ "bch" ];
+const list = [ "bch","btc" ];
 const wallet = new Wallet(list);
-const account=wallet.getAccount("bch");
-const address = account.getAddress(0);
-console.log("address: ", address);
+list.forEach(sym=>{
+    const chain = wallet.getAccount(sym);
+    console.log(chain.getAddress(0));
+});

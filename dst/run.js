@@ -1,46 +1,54 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { mnemonic } from './mnemonic.js';
 import { mnemonicToSeedSync } from 'bip39';
-import { getType, hex, readJson, u8a } from './util.js';
+import { getType, readJson, u8a } from './util.js';
 import { readdirSync } from "fs";
-import { CashAddressNetworkPrefix, CashAddressType, deriveHdPath, deriveHdPrivateNodeFromSeed, encodeCashAddress, hash160, secp256k1 } from "@bitauth/libauth";
-class BitcoinCashFormat {
-    type = CashAddressType.p2pkh;
-    prefix = CashAddressNetworkPrefix.mainnet;
+import { CashAddressNetworkPrefix, CashAddressType, deriveHdPath, deriveHdPrivateNodeFromSeed, encodeCashAddress, hash160, hash256, secp256k1, binToBase58 } from "@bitauth/libauth";
+class BitcoinFormat {
+    prefix = 0x00;
     format(publicKeyHash) {
-        return encodeCashAddress(this.prefix, this.type, publicKeyHash);
+        const len = publicKeyHash.length;
+        const arr = new Uint8Array(len + 5);
+        arr.set(publicKeyHash, 1);
+        const checksum = hash256(arr).subarray(0, 4);
+        arr.set(checksum, len + 1);
+        return binToBase58(arr);
     }
 }
-export class Chain {
+class BitcoinCashFormat {
+    type = CashAddressType.p2pkh;
+    format(publicKeyHash) {
+        console.log(publicKeyHash.length);
+        const prefix = CashAddressNetworkPrefix.mainnet;
+        return encodeCashAddress(prefix, this.type, publicKeyHash);
+    }
+}
+class Chain {
     sym;
-    hashGenesisBlock;
-    port;
-    portRpc;
-    magic;
-    seedDns;
     versions;
     name;
     per1;
     derivationPath;
+    formats;
     constructor(file) {
         if (!(this instanceof Chain))
             throw new Error("Not a Chain.  Call with new");
         const data = readJson(file);
         this.sym = data.unit.toLowerCase();
-        this.hashGenesisBlock = data.hashGenesisBlock;
-        this.port = data.port;
-        this.portRpc = data.portRpc;
-        this.magic = data.magic;
-        this.seedDns = data.seedDns;
         this.versions = data.versions;
         this.name = data.name;
         this.per1 = data.per1;
         const bip44 = data.versions["bip44"];
         this.derivationPath = `m/44'/${bip44}'/0'/0`;
+        const formats = [];
+        if (this.sym === 'bch') {
+            formats.push(new BitcoinCashFormat());
+        }
+        else {
+            formats.push(new BitcoinFormat());
+        }
+        this.formats = formats;
     }
-    formats = [
-        new BitcoinCashFormat()
-    ];
     formatAddress(publicKeyHash) {
         const format = this.formats[0];
         if (format)
@@ -156,15 +164,16 @@ class Wallet {
     accounts = new Map();
     constructor(syms) {
         this.seed = mnemonicToSeedSync(mnemonic);
-        console.log("sd:" + hex(this.seed));
         const node = deriveHdPrivateNodeFromSeed(this.seed);
         this.node = node;
-        console.log("cc:" + hex(this.node.chainCode));
         for (let i = 0; i < syms.length; i++) {
             const sym = syms[i];
             const account = new Account(this.node, sym);
             this.accounts.set(sym, account);
         }
+    }
+    getSymbols() {
+        return [...this.accounts.keys()];
     }
     getAccount(bch) {
         const account = this.accounts.get(bch);
@@ -172,10 +181,16 @@ class Wallet {
             throw new Error("account not found");
         return account;
     }
+    showAddrs() {
+        for (const ac of Array.from(this.accounts.values())) {
+            console.log(ac.addresses);
+        }
+    }
 }
-const list = ["bch"];
+const list = ["bch", "btc"];
 const wallet = new Wallet(list);
-const account = wallet.getAccount("bch");
-const address = account.getAddress(0);
-console.log("address: ", address);
+list.forEach(sym => {
+    const chain = wallet.getAccount(sym);
+    console.log(chain.getAddress(0));
+});
 //# sourceMappingURL=run.js.map
