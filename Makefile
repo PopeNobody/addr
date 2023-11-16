@@ -1,5 +1,19 @@
-all:
-	test -e node_modules || npm install
+MAKEFLAGS:= -rR
+
+run: all
+	node lib/run.js
+
+ts:= $(wildcard src/*.ts)
+js:= $(patsubst src/%.ts,lib/%.js,$(js))
+
+$(js): $(ts)
 	tsc
-	vi-node dst/run.js
-	vi-node src/old.js
+
+all: $(js)
+	rm -fr lib
+	mkdir -p lib 
+	tsc
+	chmod -w lib/*.js
+
+
+

@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="description" content="Every crypto wallet includes a unique public identifier called an address, a string of text used to send or receive funds on the blockchain. Visit BitPay to learn more about crypto addresses.">
+    <link rel="icon" href="https://bitpay.com/blog/content/images/size/w256h256/2018/08/favicon-96x96.png" type="image/png">
+    <link rel="canonical" href="https://bitpay.com/blog/crypto-wallet-addresses/">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <meta property="og:site_name" content="BitPay Blog">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Crypto Wallet Addresses: What They Are and How to Create One [2023] | BitPay">
+    <meta property="og:description" content="Every crypto wallet includes a unique public identifier called an address, a string of text used to send or receive funds on the blockchain. Visit BitPay to learn more about crypto addresses.">
+    <meta property="og:url" content="https://bitpay.com/blog/crypto-wallet-addresses/">
+    <meta property="og:image" content="https://bitpay.com/blog/content/images/2023/02/bitpay-wallet-address.png">
+    <meta property="article:published_time" content="2023-02-02T19:57:37.000Z">
+    <meta property="article:modified_time" content="2023-06-16T13:55:08.000Z">
+    <meta property="article:tag" content="Blockchain Education">
+    
+    <meta property="article:publisher" content="https://www.facebook.com/bitpayofficial">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Crypto Wallet Addresses: What They Are and How to Create One [2023] | BitPay">
+    <meta name="twitter:description" content="Every crypto wallet includes a unique public identifier called an address, a string of text used to send or receive funds on the blockchain. Visit BitPay to learn more about crypto addresses.">
+    <meta name="twitter:url" content="https://bitpay.com/blog/crypto-wallet-addresses/">
+    <meta name="twitter:image" content="https://bitpay.com/blog/content/images/2023/02/bitpay-wallet-address.png">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="The BitPay Team ">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="Blockchain Education">
+    <meta name="twitter:site" content="@BitPay">
+    <meta property="og:image:width" content="2000">
+    <meta property="og:image:height" content="1125">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "BitPay Blog",
+        "url": "https://bitpay.com/blog/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://bitpay.com/blog/content/images/2019/09/bitpay-logo-white.png"
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "The BitPay Team ",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://bitpay.com/blog/content/images/2015/11/bitpay-logo-square-2.png",
+            "width": 1300,
+            "height": 1300
+        },
+        "url": "https://bitpay.com/blog/author/team/",
+        "sameAs": [
+            "https://github.com/bitpay/"
+        ]
+    },
+    "headline": "Crypto Wallet Addresses: What They Are and How to Create One [2023] | BitPay",
+    "url": "https://bitpay.com/blog/crypto-wallet-addresses/",
+    "datePublished": "2023-02-02T19:57:37.000Z",
+    "dateModified": "2023-06-16T13:55:08.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://bitpay.com/blog/content/images/2023/02/bitpay-wallet-address.png",
+        "width": 2000,
+        "height": 1125
+    },
+    "keywords": "Blockchain Education",
+    "description": "The Important Bits\nCrypto wallets are an essential tool for managing a user’s holdings on the blockchain, typically taking the form of a piece of software or device. One of the most important pieces of information contained within a crypto wallet is its address, an alphanumeric text sequence the owner uses to send and receive cryptocurrency over a blockchain network. Crypto wallet addresses function similarly to an email address. They’re safely shared with anybody looking to send you cryptocurre",
+    "mainEntityOfPage": "https://bitpay.com/blog/crypto-wallet-addresses/"
+}
+    </script>
+
+    <meta name="generator" content="Ghost 5.73">
+    <link rel="alternate" type="application/rss+xml" title="BitPay Blog" href="https://bitpay.com/blog/rss/">
+    <script defer src="https://cdn.jsdelivr.net/ghost/portal@~2.36/umd/portal.min.js" data-i18n="false" data-ghost="https://bitpay.com/blog/" data-key="d27aa352f5797f2a26f23d21d8" data-api="https://bp-blog.ghost.io/blog/ghost/api/content/" crossorigin="anonymous"></script><style id="gh-members-styles">.gh-post-upgrade-cta-content,
+.gh-post-upgrade-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    width: 100%;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.gh-post-upgrade-cta-content {
+    border-radius: 8px;
+    padding: 40px 4vw;
+}
+
+.gh-post-upgrade-cta h2 {
+    color: #ffffff;
+    font-size: 28px;
+    letter-spacing: -0.2px;
+    margin: 0;
+    padding: 0;
+}
+
+.gh-post-upgrade-cta p {
+    margin: 20px 0 0;
+    padding: 0;
+}
+
+.gh-post-upgrade-cta small {
+    font-size: 16px;
+    letter-spacing: -0.2px;
+}
+
+.gh-post-upgrade-cta a {
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow: none;
+    text-decoration: underline;
+}
+
+.gh-post-upgrade-cta a:hover {
+    color: #ffffff;
+    opacity: 0.8;
+    box-shadow: none;
+    text-decoration: underline;
+}
+
+.gh-post-upgrade-cta a.gh-btn {
+    display: block;
+    background: #ffffff;
+    text-decoration: none;
+    margin: 28px 0 0;
+    padding: 8px 18px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.gh-post-upgrade-cta a.gh-btn:hover {
+    opacity: 0.92;
+}</style>
+    <script defer src="https://cdn.jsdelivr.net/ghost/sodo-search@~1.1/umd/sodo-search.min.js" data-key="d27aa352f5797f2a26f23d21d8" data-styles="https://cdn.jsdelivr.net/ghost/sodo-search@~1.1/umd/main.css" data-sodo-search="https://bp-blog.ghost.io/blog/" crossorigin="anonymous"></script>
+    
+    <link href="https://bitpay.com/blog/webmentions/receive/" rel="webmention">
+    <script defer src="/blog/public/cards.min.js?v=db0162a6bf"></script>
+    <link rel="stylesheet" type="text/css" href="/blog/public/cards.min.css?v=db0162a6bf">
+    <script defer src="/blog/public/member-attribution.min.js?v=db0162a6bf"></script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N2FD7CG6JK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-N2FD7CG6JK');
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.12.0/tocbot.css" integrity="sha512-2kqK5bWDwdrluTn6Wkj+jgiwyzvAHLirVp08Kz7kN5I8PWQ0tUtEMxfhyWDCrnws91BJ9PfrUy6ImfA7Qb22TA==" crossorigin="anonymous" />
+    <style>
+/*--------------------
+Mixins
+---------------------*/
+@mixin center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+/*--------------------
+Body
+---------------------*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+/*--------------------
+Shop Card
+---------------------*/
+.shop-card {
+  @include center;
+  background: #f5f5f5;
+  box-shadow: 0 10px 20px rgba(0,0,0,.3);
+  overflow: hidden;
+  border-radius: 5px;
+  padding: 25px;
+  text-align: center;
+  z-index: 2;
+
+    & img {
+      margin: -95px 0 -60px;
+      width: 100%;
+    }
+  }
+
+  .title {
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 30px;
+    color: #4F6EF7;
+    margin-bottom: 5px;
+  }
+
+  .desc {
+    font-size: 17px;
+    opacity: .8;
+    margin-bottom: 3px;
+  }
+
+  .cta {
+    padding: 20px 20px 5px;
+
+    &::after {
+      content: '';
+      display: table;
+      clear: both;
+    }
+  }
+
+  .btn {
+    position: relative;
+    z-index: 1;
+    float: center;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #4F6EF7;
+    padding: 10px 18px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    line-height: .95;
+    border: none;
+    background: none;
+    outline: none;
+    border: 1px solid #4F6EF7;
+    border-radius: 5px;
+    overflow: hidden;
+    
+    & .bg {
+      width: 101%;
+      height: 101%;
+      display: block!important;
+      z-index: -1;
+      opacity: 0;
+      transition: all .3s ease-in-out;
+      background: #4F6EF7;
+    }
+    
+    &:hover {
+      color: #fff!important;
+      border: 1px solid transparent!important;
+      
+      & .bg {
+        opacity: 1;
+      }
+    }
+    
+  }
+
+}
+
+
+/*--------------------
+Slick Dots
+---------------------*/
+.slick-dots {
+  bottom: -30px;
+  
+  a {
+    position: relative;
+    display: block;
+    width: 16px;
+    height: 16px;
+  }
+  
+  span {
+    @include center;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+  }
+
+  circle {
+    fill: none;
+    stroke-width: 1;
+    stroke-linecap: round;
+    stroke-dasharray: 39 39;
+    stroke-dashoffset: 39;
+    transition: all .9s ease-in-out;
+    transition: stroke-dashoffset 0.5s;
+  }
+
+  .slick-active circle {
+    stroke-dashoffset: 0;
+  }
+}
+
+
+/*--------------------
+Background
+--------------------*/
+.bg {
+  @include center;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(15deg, #d33f34 50%, #a61322 50.1%);
+  z-index: 1;
+  display: none;
+}
+ .cta-button {
+background: #4f6ef7;
+color: #fff !important;         
+border-radius: 11px;
+padding: 20px 45px;
+display: inline-block;
+font: bold 26px/1 "Ubuntu", sans-serif;
+text-align: center;
+box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important         
+    }
+
+ .cta-button:hover {
+background: #2A50F8;
+color: #fff; 
+border-radius: 11px;
+padding:       20px 45px;
+display:       inline-block;
+font:          bold 26px/1 "Ubuntu", sans-serif;
+text-align:    center;
+box-shadow:    0 .5rem 1rem rgba(0,0,0,.15)!important 
+tranform: translateY(-3px);
+transition: transform .3s ease;     
+    }
+.related-article {
+  background-color: #ECEFFD;
+  border-left: 6px solid #4F6EF7;
+  font-size: 75%;
+  width: 100%;  
+  padding: 5px;  
+}
+#toc_container {
+    background: #FBFBFF;
+    border: 1px solid #aaa;
+    display: table;
+    font-size: 95%;
+    margin-bottom: 1em;
+    padding: 20px;
+    width: auto;
+}
+
+.toc_title {
+    font-weight: 700;
+    text-align: center;
+}
+
+#toc_container li, #toc_container ul, #toc_container ul li{
+    list-style: outside none none !important;
+    }
+</style>
+<style>
+.table-comparison {
+  margin-bottom: 4em;
+  max-width: 100%;
+}
+
+table {
+  border-collapse: collapse;
+  overflow: hidden;
+  display: inline-block;
+  overflow-x: auto;
+}
+
+.table-comparison thead {
+  background-color: none;
+}
+
+.table-comparison th {
+  padding: 0.5em 1em;
+}
+
+.table-comparison td {
+  text-align: center;
+  padding: 0.5em 1em;
+}
+
+.table-comparison td:first-child {
+  text-align: left;
+}
+
+.tbody-bg-odd tbody tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+.tbody-bg-even thead tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+.table-comparison tbody .success {
+  display: flex;
+  background-color: #1FCC82;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  border-radius: 50%;
+}
+
+.table-comparison tbody .success::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 10px;
+  display: inline-block;
+  width: 3px;
+  height: 8px;
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.table-comparison tbody .cancel {
+  display: flex;
+  background-color: #FF3B3B;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  border-radius: 50%;
+}
+
+.table-comparison tbody .cancel::before, .cancel::after {
+  position: absolute;
+  top: 11px;
+  bottom: 0;
+  left: 6.3px;
+  right: 0;
+  content: "";
+  background-color: #fff;
+  width: 11px;
+  height: 2px;
+  border-radius: 2px;
+}
+
+.table-comparison tbody .cancel::before {
+  transform: rotate(-45deg);
+}
+
+.table-comparison tbody .cancel::after {
+  transform: rotate(45deg);
+}
+
+.table-comparison tbody .mid {
+  --color-accent: #FBC103;
+  color: var(--color-accent);
+  border-radius: 2rem;
+  padding: 0.2em 1em;
+  font-size: 0.8rem;
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  font-weight: 700;
+}
+
+.table-comparison tbody .mid::before {
+  background-color: var(--color-accent);
+  opacity: 0.2;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.table-comparison tbody .good {
+  --color-accent: #16C60C;
+  color: var(--color-accent);
+  border-radius: 2rem;
+  padding: 0.2em 1em;
+  font-size: 0.8rem;
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  font-weight: 700;
+}
+
+.table-comparison tbody .good::before {
+  background-color: var(--color-accent);
+  opacity: 0.2;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.table-comparison tbody .bad {
+  --color-accent: #F03A17;
+  color: var(--color-accent);
+  border-radius: 2rem;
+  padding: 0.2em 1em;
+  font-size: 0.8rem;
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  font-weight: 700;
+}
+
+.table-comparison tbody .bad::before {
+  background-color: var(--color-accent);
+  opacity: 0.2;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+</style><style>:root {--ghost-accent-color: #15171A;}</style>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>Crypto Wallet Addresses: What They Are and How to Create One [2023] | BitPay</title>
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" type="text/css" href="https://bitpay.com/blog/assets/bootstrap-grid.css?v=db0162a6bf" />
+  <link rel="stylesheet" type="text/css" href="https://bitpay.com/blog/assets/built/screen.css?v=db0162a6bf" />
+  <link href="https://fonts.googleapis.com/css?family=Heebo" rel="stylesheet">
+
+
+
+</head>
+
+<body class="post-template tag-blockchain-education">
+
+  <div class="site-wrapper">
+
+
+    
+
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+  <div class="site-nav-left">
+    <a class="site-nav-logo" href="https://bitpay.com/blog"><img src="https://bitpay.com/blog/content/images/2019/09/bitpay-logo-white.png" alt="BitPay Blog" /></a>
+    <ul class="nav">
+    <li class="nav-home"><a href="https://bitpay.com/blog/">Home</a></li>
+    <li class="nav-spend-your-crypto"><a href="https://bitpay.com/blog/tag/spend-your-crypto/">Spend Your Crypto</a></li>
+    <li class="nav-industry-analysis"><a href="https://bitpay.com/blog/tag/industry-analysis/">Industry Analysis</a></li>
+    <li class="nav-blockchain-education"><a href="https://bitpay.com/blog/tag/blockchain-education/">Blockchain Education</a></li>
+    <li class="nav-product-updates"><a href="https://bitpay.com/blog/tag/product-updates/">Product Updates</a></li>
+    <li class="nav-news"><a href="https://bitpay.com/blog/tag/news/">News</a></li>
+</ul>
+
+  </div>
+  <div class="site-nav-right">
+    <div class="social-links">
+      <a class="social-link social-link-fb" href="https://www.facebook.com/bitpayofficial" title="Facebook" target="_blank"
+        rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+</a>
+      <a class="social-link social-link-tw" href="https://twitter.com/BitPay" title="Twitter" target="_blank"
+        rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+</a>
+      <a class="social-link" href="https://www.linkedin.com/company/bitpay-inc-"
+        target="_blank"><svg width="17px" height="16px" viewBox="0 0 17 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>LinkedIn</title>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Footer/Standard" transform="translate(-1140.000000, -675.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <g id="logo-linkedin" transform="translate(1140.000000, 675.000000)">
+                <path d="M15.3,0 L0.7,0 C0.3,0 0,0.3 0,0.7 L0,15.4 C0,15.7 0.3,16 0.7,16 L15.4,16 C15.8,16 16.1,15.7 16.1,15.3 L16.1,0.7 C16,0.3 15.7,0 15.3,0 Z M4.7,13.6 L2.4,13.6 L2.4,6 L4.8,6 L4.8,13.6 L4.7,13.6 Z M3.6,5 C2.8,5 2.2,4.3 2.2,3.6 C2.2,2.8 2.8,2.2 3.6,2.2 C4.4,2.2 5,2.8 5,3.6 C4.9,4.3 4.3,5 3.6,5 Z M13.6,13.6 L11.2,13.6 L11.2,9.9 C11.2,9 11.2,7.9 10,7.9 C8.8,7.9 8.6,8.9 8.6,9.9 L8.6,13.7 L6.2,13.7 L6.2,6 L8.5,6 L8.5,7 C8.8,6.4 9.6,5.8 10.7,5.8 C13.1,5.8 13.5,7.4 13.5,9.4 L13.5,13.6 L13.6,13.6 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>
+</a>
+    </div>
+    <a class="subscribe-button" href="https://bitpay.com/subscribe-blog/">Subscribe</a>
+  </div>
+</nav>    </div>
+</header>
+
+
+<main id="site-main" class="site-main outer">
+    <div class="inner">
+
+        <article class="post-full post tag-blockchain-education ">
+
+            <header class="post-full-header">
+                <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="2023-02-02">2 February 2023</time>
+                        <span class="date-divider">/</span> <a href="/blog/tag/blockchain-education/">Blockchain Education</a>
+                </section>
+                <h1 class="post-full-title">Crypto Wallet Addresses: What They Are and How to Create One</h1>
+            </header>
+
+            <figure class="post-full-image">
+                <img
+                    srcset="/blog/content/images/size/w300/2023/02/bitpay-wallet-address.png 300w,
+                            /blog/content/images/size/w600/2023/02/bitpay-wallet-address.png 600w,
+                            /blog/content/images/size/w1000/2023/02/bitpay-wallet-address.png 1000w,
+                            /blog/content/images/size/w2000/2023/02/bitpay-wallet-address.png 2000w"
+                    sizes="(max-width: 800px) 400px,
+                            (max-width: 1170px) 700px,
+                            1400px"
+                    src="/blog/content/images/size/w2000/2023/02/bitpay-wallet-address.png"
+                    alt="Crypto Wallet Addresses: What They Are and How to Create One"
+                />
+            </figure>
+
+            <section class="post-full-content">
+                <div class="post-content">
+                    <div class="kg-card kg-callout-card kg-callout-card-green"><div class="kg-callout-text"><strong>The Important Bits</strong><br>Crypto wallets are an essential tool for managing a user’s holdings on the blockchain, typically taking the form of a piece of software or device. One of the most important pieces of information contained within a crypto wallet is its address, an alphanumeric text sequence the owner uses to send and receive cryptocurrency over a blockchain network. Crypto wallet addresses function similarly to an email address. They’re safely shared with anybody looking to send you cryptocurrency, and likewise identify your wallet as the sending address when you make a crypto payment.</div></div><p><br><strong>In this article</strong></p><ul><li><a href="https://bitpay.com/blog/crypto-wallet-addresses/#what-is-a-crypto-wallet-address-how-do-they-work">What is a crypto wallet address and how do they work?</a></li><li><a href="https://bitpay.com/blog/crypto-wallet-addresses/#different-types-of-wallet-addresses-with-examples">Different types of crypto wallet addresses</a></li><li><a href="https://bitpay.com/blog/crypto-wallet-addresses/#how-do-i-create-a-bitcoinethereumcrypto-address">How to create a crypto wallet address</a></li><li><a href="https://bitpay.com/blog/crypto-wallet-addresses/#how-do-i-find-my-wallet-address">How to find your crypto wallet address</a></li><li><a href="https://bitpay.com/blog/crypto-wallet-addresses/#wallet-address-faqs">FAQs about crypto wallet addresses</a></li></ul><hr><h2 id="what-is-a-crypto-wallet-address-how-do-they-work">What is a crypto wallet address? How do they work?</h2><p>One of the first things you’ll need to start delving into the world of cryptocurrency is a crypto wallet. Despite the name, this little piece of software or hardware doesn’t actually store your crypto funds. Rather, your crypto wallet’s primary function, aside from safeguarding your <a href="https://bitpay.com/blog/what-are-public-and-private-keys/">private keys</a>, is enabling you to interact with your funds on the blockchain. All such activity, from sending and receiving crypto to spending, swapping and more, is done through your crypto wallet. <br></p><p>Every crypto wallet includes a unique public identifier called an address, a string of text used to send or receive funds on the blockchain, sort of similar to how an email address functions, only randomly generated. You’d provide your wallet address when somebody wants to send you crypto, and anyone receiving crypto from your wallet will be able to see it came from your address. <br></p><p>In order to send crypto to another user’s wallet you’ll have to enter their wallet address, either by copy-pasting it into your wallet app’s “send” field or by scanning a QR code the recipient provides. Crypto wallet addresses can be 40 alphanumeric characters, so they can be quite cumbersome to enter manually. Once you input the recipient’s wallet address and click send, the transaction is initiated.</p><div class="kg-card kg-callout-card kg-callout-card-blue"><div class="kg-callout-emoji">➡️</div><div class="kg-callout-text"><a href="https://bitpay.com/blog/how-crypto-transactions-work/">Related: How Do Crypto Transactions Work?</a></div></div><p></p><h2 id="different-types-of-wallet-addresses-with-examples">Different types of wallet addresses (with examples)</h2><p>Now let’s get into different kinds of wallet addresses and what they look like. Different cryptocurrency networks use slightly different conventions for generating wallet addresses, many of which can quickly identify the cryptocurrency being used if you know what to look for. For instance, every Bitcoin address starts with either 1, 3 or bc1. Ethereum addresses always start with 0x and are 40 characters in length, excluding the prefix.<br></p><p>Just as there are several <a href="https://bitpay.com/blog/types-of-crypto-wallets/">types of crypto wallets</a>, there are also different types of crypto addresses, each of which functions uniquely. The four most common types of Bitcoin wallet addresses include:<br></p><ul><li>Segwit or Bech32 Address</li><li>Legacy or P2PKH Address</li><li>Compatibility or P2SH Address</li><li>Taproot or BC1P Address</li></ul><div class="kg-card kg-callout-card kg-callout-card-yellow"><div class="kg-callout-text"><strong>Note:</strong> Unless otherwise specified, all wallet addresses used in this resource were randomly pulled from various blockchain explorer tools and are used as purely an educational example. All crypto wallet addresses and their transactions are public information, as intended by blockchain creators.</div></div><p></p><p></p><p><strong>Segwit or Bech32</strong> Bitcoin addresses are the most commonly used for transactions on the Bitcoin network. This is because they are designed to limit the amount of information stored in each transaction, which reduces transaction fees. Segwit addresses all start with bc1, and look something like this:</p><div class="kg-card kg-callout-card kg-callout-card-green"><div class="kg-callout-text"><strong>bc1d42UNb54eBiGm0qEM0h6r2h8n532to9jtp186ns</strong></div></div><p></p><p></p><p><strong>Legacy or P2PKH</strong> (pay-to-public-key-hash) addresses were the original form of crypto address when Bitcoin first launched. Since then less-expensive alternatives have come along, so Legacy addresses are less popular today because of their large transaction sizes. P2PKH addresses all start with 1, for example:</p><div class="kg-card kg-callout-card kg-callout-card-green"><div class="kg-callout-text"><strong>17g24tOg1URxOylEyt9v3Nps5T8CKe2Gyd</strong></div></div><p></p><p></p><p><br><strong>Compatibility or P2SH</strong> (pay-to-script hash) addresses are much less common for your average crypto user. They enable certain specific functionalities, such as allowing senders of crypto to require multiple digital signatures before a transaction is authorized. P2SH addresses resemble P2PKH addresses, only they start with a 3 instead of a 1. For instance:</p><div class="kg-card kg-callout-card kg-callout-card-green"><div class="kg-callout-text"><strong>3T74h2ClRP93NOwAviersyiWkqpHcLYBs</strong></div></div><p></p><p></p><p><br><strong>Taproot or BC1P</strong> addresses offer enhanced privacy for Bitcoin transactions, as well as unlock smart contract functionality for bitcoin addresses. Transaction sizes utilizing BC1P addresses fall somewhere between Legacy addresses and Bech32 addresses. All Taproot addresses start with bc1p, such as:</p><div class="kg-card kg-callout-card kg-callout-card-green"><div class="kg-callout-text"><strong>bc1prwgcpptoxrpfl5go81wpd5qlsig5yt4g7urb45e</strong></div></div><p></p><p></p><p><br><strong><strong>Ethereum </strong></strong>blockchain addresses always start with the characters “0x” and will be some of the longest addresses, being made up of 40 characters (not including “0x”). To help make Ethereum and smart contract addresses more legible, services like Unstoppable Domains can be used to create recognizable aliases for ETH addresses. These formats apply to ETH and other ERC-20 tokens, including <a href="https://bitpay.com/blog/how-to-use-stablecoins/">stablecoins</a>.</p><div class="kg-card kg-callout-card kg-callout-card-green"><div class="kg-callout-text"><strong>0x7f533b5fbf6ef86c3b7df76cc27fc67744a9a760</strong></div></div><p></p><p></p><p><strong><strong>Litecoin </strong></strong>addresses will begin either with “l” (legacy address), “m” or “3” (P2SH addresses).</p><div class="kg-card kg-callout-card kg-callout-card-green"><div class="kg-callout-text"><strong>ltc1qzvcgmntglcuv4smv3lzj6k8szcvsrmvk0phrr9wfq8w493r096ssm2fgsw</strong></div></div><p></p><p></p><p><strong>Bitcoin Cash</strong> addresses may sometimes look like a Bitcoin address. Since BCH was a fork of BTC, some addresses may begin with “3”. However, later on, new address formats that begin with “q” or “p” were introduced.</p><div class="kg-card kg-callout-card kg-callout-card-green"><div class="kg-callout-text"><strong>qrvax3jgtwqssnkpctlqdl0rq7rjn0l0hgny8pt0hp</strong></div></div><p></p><p></p><p><strong>Dogecoin </strong>wallet addresses will either begin with a capital “D” followed by a lowercase letter or a number.</p><div class="kg-card kg-callout-card kg-callout-card-green"><div class="kg-callout-text"><strong>D7wbmbjBWG5HPkT6d4gh6SdQPp6z25vcF2</strong></div></div><p><br></p><h2 id="how-do-i-create-a-bitcoinethereumcrypto-address">How do I create a Bitcoin/Ethereum/crypto address?</h2><p>In order to create a crypto wallet address, you’ll of course first need a wallet. But don’t just choose any wallet. You’ll be entrusting the security of your private keys to the wallet you choose, so do your homework and only use a trusted wallet provider like BitPay, or a reputable crypto exchange like Kraken or Coinbase. </p><div class="kg-card kg-callout-card kg-callout-card-blue"><div class="kg-callout-text"><a href="https://bitpay.com/blog/create-a-crypto-wallet/">Full Guide: How to Create a Crypto Wallet in 5 Easy Steps</a></div></div><p></p><h2 id="how-do-i-find-my-wallet-address">How do I find my wallet address?</h2><p>Fortunately, most wallet providers make it easy to find and share your wallet address. A few taps in your wallet app’s settings menu should reveal your address when needed. Many even let you generate a QR code for easier sharing.<br></p><p>Here’s how you can find your wallet address within the BitPay Wallet app:</p><ol><li>From the app home screen, tap your wallet from the "My Crypto" section and select a key under the "My Wallets" section.</li></ol><p>2. Select the “Receive” button</p><p>3. Your wallet address will appear; you can copy/paste this address or display the QR code to be scanned by another device  <br></p><p></p><div class="kg-card kg-callout-card kg-callout-card-blue"><div class="kg-callout-text">By default, BitPay Wallets change your wallet address for every transaction to better protect your privacy. “Old” or previously used addresses will still function. You have the option to disable this function via the <a href="https://support.bitpay.com/hc/en-us/articles/360015920572-Setting-up-the-Single-Address-Feature-for-your-BitPay-Wallet#:~:text=To%20create%20a%20single%20address,click%20Create%20a%20new%20wallet.">“Single address” option when creating a new wallet</a>.</div></div><p><br></p><h2 id="tips-for-using-your-wallet-address-for-sending-and-receiving-payments">Tips for using your wallet address for sending and receiving payments</h2><p><strong>Test out small transactions</strong> to ensure you’ve got the address right. Once crypto is sent, it can’t be reversed. This means that sending money to the wrong address will result in your funds being most likely lost. For this reason, it is a smart idea to send a smaller test payment before transferring large amounts of money.<br></p><p><strong>Be wary of <a href="https://trezor.io/support/a/address-poisoning-attacks">address poisoning scams</a></strong> being used to defraud crypto users of their funds. The attacker creates a fake address that looks similar to the legitimate address of the intended recipient and sends it to the victim. When the victim sends their funds to the fake address, the attacker is able to steal the funds.</p><p></p><p></p><h2 id="wallet-address-faqs">Wallet address FAQs</h2><p>If you still have lingering questions about what crypto wallet addresses are, how they work or any potential security issues with each type, read on for some of the most commonly asked questions users have.<br></p><h3 id="is-it-safe-to-share-my-crypto-wallet-address">Is it safe to share my crypto wallet address?</h3><p>Yes. You are free to safely share your crypto wallet address, either directly with an individual or posted online. However, keep in mind that information associated with a wallet address, including balances and transaction history, is publicly available on the blockchain. <br><br></p><h3 id="is-my-public-key-the-same-as-my-wallet-address">Is my public key the same as my wallet address?</h3><p>They’re related, but not the same. When a crypto wallet is created, it generates a pair of keys, one public and one private. The public key essentially verifies ownership of a particular wallet, while the private key is used to digitally sign transactions. Wallet addresses are derived from a wallet’s public key through a process called hashing, where a string of text is condensed and formatted into a specific length.<br><br></p><h3 id="are-bitcoin-addresses-public-information">Are Bitcoin addresses public information?</h3><p>Since all Bitcoin transactions are recorded on a public blockchain, any user can view the balance or transaction history for any Bitcoin address. However, there’s no way to access the funds without the corresponding private key. Additionally, as long as there is no other personal information tying you to a wallet address, your identity can’t be uncovered simply from a crypto address.<br><br></p><h3 id="can-bitcoin-be-stolen-if-someone-has-my-wallet-address">Can Bitcoin be stolen if someone has my wallet address?</h3><p>No. Your wallet address is derived from your public key, which in turn is generated from your private key. However, these equations only work in one direction. It would be virtually impossible, for instance, to divine someone’s private key even if you had access to both their wallet address and public key.<br><br><br></p><h3 id="why-does-my-wallet-address-keep-changing-will-my-old-wallet-address-still-work-do-addresses-expire">Why does my wallet address keep changing? Will my old wallet address still work? Do addresses expire?</h3><p>When poring over your Bitcoin transaction history, you may notice your wallet address has changed over time. This might make new crypto users nervous, but it’s just a security feature. Many wallets and exchanges automatically generate a new address for every transaction, and most crypto wallets are actually able to manage hundreds of Bitcoin addresses simultaneously. Any previously used addresses remain permanently connected to your wallet and can still be used to send or receive funds. However, continuing to use them could compromise your privacy and make your blockchain activity more easily tracked. It’s worth noting that these address changes only happen with cryptocurrencies on the Bitcoin blockchain, such as Bitcoin Cash (BCH), Litecoin (LTC) and Dogecoin (DOGE).<br><br></p><h3 id="what-is-a-changerefund-address">What is a change/refund address?</h3><p>When spending fiat currency, if you pay for a $15 item with a $20 bill, you’re owed $5 in change. The same principle applies when spending crypto, where the amount paid minus the amount owed gives you your change. In crypto transactions, the sender receives any change due via a new change address generated by their wallet.</p><p><br></p><p></p><p><br></p><p><br></p><p><br></p>
+                </div>
+            </section>
+            <div class="read-next-feed">
+                <article class="read-next-card" 
+                     >
+                    <header class="read-next-card-header">
+                        <small class="read-next-card-header-sitetitle">&mdash; BitPay Blog &mdash;</small>
+                        <h3 class="read-next-card-header-title"><a href="/blog/tag/blockchain-education/">Blockchain Education</a></h3>
+                    </header>
+                    <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
+</div>
+                    <div class="read-next-card-content">
+                        <ul>
+                            <li><a href="/blog/bitcoin-dominance/">What is Bitcoin Dominance and How Does It Impact the Crypto Market?</a></li>
+                            <li><a href="/blog/ten-things-to-do-with-bitpay-app/">First 10 Things to Do After You Get the BitPay Wallet App</a></li>
+                            <li><a href="/blog/bitcoin-halving-countdown/">Bitcoin Halving Countdown: 2024 Halving Date &amp; A Review of Past Halvings</a></li>
+                        </ul>
+                    </div>
+                    <footer class="read-next-card-footer">
+                        <a href="/blog/tag/blockchain-education/">See all 71 posts
+                            →</a>
+                    </footer>
+                </article>
+            
+                <article class="post-card post tag-crypto-wallets tag-blockchain-education ">
+
+    <a class="post-card-image-link" href="/blog/how-to-secure-your-crypto-wallet/">
+        <img class="post-card-image"
+            srcset="/blog/content/images/size/w300/2023/02/secure-your-crypto-wallet-bitpay.jpg 300w,
+                    /blog/content/images/size/w600/2023/02/secure-your-crypto-wallet-bitpay.jpg 600w,
+                    /blog/content/images/size/w1000/2023/02/secure-your-crypto-wallet-bitpay.jpg 1000w,
+                    /blog/content/images/size/w2000/2023/02/secure-your-crypto-wallet-bitpay.jpg 2000w"
+            sizes="(max-width: 1000px) 400px, 700px"
+            src="/blog/content/images/size/w600/2023/02/secure-your-crypto-wallet-bitpay.jpg"
+            alt="How to Secure Your Crypto Wallet"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="/blog/how-to-secure-your-crypto-wallet/">
+
+            <header class="post-card-header">
+                    <span class="post-card-tags">Crypto Wallets</span>
+                <h2 class="post-card-title">How to Secure Your Crypto Wallet</h2>
+            </header>
+
+            <section class="post-card-excerpt">
+                <p>Buying crypto, experimenting with dApps, making payments and seeing the value of your portfolio rise are some of the most exciting aspects of cryptocurrency. But most important is ensuring the safety of your</p>
+            </section>
+
+        </a>
+
+        <footer class="post-card-meta">
+
+            <ul class="author-list">
+                <li class="author-list-item">
+
+                    <div class="author-name-tooltip">
+                        The BitPay Team 
+                    </div>
+
+                        <a href="/blog/author/team/" class="static-avatar">
+                            <img class="author-profile-image" src="/blog/content/images/size/w100/2015/11/bitpay-logo-square-2.png" alt="The BitPay Team " />
+                        </a>
+                </li>
+            </ul>
+
+            <span class="reading-time">4 min read</span>
+
+        </footer>
+
+    </div>
+
+</article>
+            
+                <article class="post-card post tag-blockchain-education tag-crypto-wallets ">
+
+    <a class="post-card-image-link" href="/blog/wallets-vs-exchanges/">
+        <img class="post-card-image"
+            srcset="/blog/content/images/size/w300/2023/01/crypto-wallets-vs-exchange.png 300w,
+                    /blog/content/images/size/w600/2023/01/crypto-wallets-vs-exchange.png 600w,
+                    /blog/content/images/size/w1000/2023/01/crypto-wallets-vs-exchange.png 1000w,
+                    /blog/content/images/size/w2000/2023/01/crypto-wallets-vs-exchange.png 2000w"
+            sizes="(max-width: 1000px) 400px, 700px"
+            src="/blog/content/images/size/w600/2023/01/crypto-wallets-vs-exchange.png"
+            alt="Crypto Wallets vs Exchanges: Which Is Best For You?"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="/blog/wallets-vs-exchanges/">
+
+            <header class="post-card-header">
+                    <span class="post-card-tags">Blockchain Education</span>
+                <h2 class="post-card-title">Crypto Wallets vs Exchanges: Which Is Best For You?</h2>
+            </header>
+
+            <section class="post-card-excerpt">
+                <p>The Important Bits
+Crypto wallets and crypto exchanges have some areas in which they overlap, but they are not the same. Crypto wallets are pieces of hardware or software that serve as a</p>
+            </section>
+
+        </a>
+
+        <footer class="post-card-meta">
+
+            <ul class="author-list">
+                <li class="author-list-item">
+
+                    <div class="author-name-tooltip">
+                        The BitPay Team 
+                    </div>
+
+                        <a href="/blog/author/team/" class="static-avatar">
+                            <img class="author-profile-image" src="/blog/content/images/size/w100/2015/11/bitpay-logo-square-2.png" alt="The BitPay Team " />
+                        </a>
+                </li>
+            </ul>
+
+            <span class="reading-time">7 min read</span>
+
+        </footer>
+
+    </div>
+
+</article>
+            
+            </div>
+            <section class="subscribe-form">
+                <h3 class="subscribe-form-title">Subscribe to BitPay Blog</h3>
+                <p>Get the latest posts delivered right to your inbox</p>
+                <a href="https://bitpay.com/subscribe-blog/">
+                    <span class="cta">Subscribe</span>
+                </a>
+            </section>
+
+
+        </article>
+
+    </div>
+</main>
+
+<aside class="read-next outer">
+    <div class="inner">
+
+    </div>
+</aside>
+
+<div class="floating-header">
+    <div class="floating-header-logo">
+        <a href="https://bitpay.com/blog">
+                <img src="/blog/content/images/size/w30/2018/08/favicon-96x96.png" alt="BitPay Blog icon" />
+            <span>BitPay Blog</span>
+        </a>
+    </div>
+    <span class="floating-header-divider">&mdash;</span>
+    <div class="floating-header-title">Crypto Wallet Addresses: What They Are and How to Create One</div>
+    <div class="floating-header-share">
+        <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/>
+</svg>
+</div>
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=Crypto%20Wallet%20Addresses%3A%20What%20They%20Are%20and%20How%20to%20Create%20One&amp;url=https://bitpay.com/blog/crypto-wallet-addresses/"
+            onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+        </a>
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://bitpay.com/blog/crypto-wallet-addresses/"
+            onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+        </a>
+    </div>
+    <progress id="reading-progress" class="progress" value="0">
+        <div class="progress-container">
+            <span class="progress-bar"></span>
+        </div>
+    </progress>
+</div>
+
+
+
+
+    <div class="footer">
+    <div class="inner">
+
+        <div class="row">
+
+            <div class="col-md-4">
+                <img src="" alt="">
+            </div>
+            <div class="col-md-2 col-6">
+                <div class="footer-heading">Business</div>
+                <ul>
+                    <li><a href="https://bitpay.com/tour">Payments</a></li>
+                    <li><a href="https://bitpay.com/billing">Billing</a></li>
+                    <li><a href="https://bitpay.com/pricing">Pricing</a></li>
+                    <li><a href="https://bitpay.com/exchange-rates">Exchange Rates</a></li>
+                    <li><a href="https://help.bitpay.com">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-2 col-6">
+                <div class="footer-heading">Personal</div>
+                <ul>
+                    <li><a href="https://bitpay.com/card">Card</a></li>
+                    <li><a href="https://support.bitpay.com/hc/en-us/categories/115000745966-BitPay-Card">Card FAQ</a>
+                    </li>
+                    <li><a href="https://bitpay.com/wallet">Wallet</a></li>
+                    <li><a href="https://support.bitpay.com/hc/en-us/categories/115000745946-BitPay-Wallet">Wallet
+                            FAQ</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-2 col-6">
+                <div class="footer-heading">Developers</div>
+                <ul>
+                    <li><a href="https://bitpay.com/docs">Docs</a></li>
+                    <li><a href="https://bitcore.io/">Bitcore</a></li>
+                    <li><a href="https://insight.is/">Insight</a></li>
+                    <li><a href="http://bitpay.github.io">Open Source</a></li>
+                    <li><a href="https://bitpay.com/pgp-keys">PGP Keys</a></li>
+                    <li><a href="https://bitpay.com/integrations">Integrations</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-2 col-6">
+                <div class="footer-heading">Company</div>
+                <ul>
+                    <li><a href="https://bitpay.com/about">About</a></li>
+                    <li><a href="https://bitpay.com/about/team">Careers</a></li>
+                    <li><a href="https://bitpay.com/about/press">Press</a></li>
+                    <li><a href="https://bitpay.com/about/terms">Terms of Use</a></li>
+                    <li><a href="https://bitpay.com/about/privacy">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+  </div>
+
+
+  <script>
+    var images = document.querySelectorAll('.kg-gallery-image img');
+    images.forEach(function (image) {
+      var container = image.closest('.kg-gallery-image');
+      var width = image.attributes.width.value;
+      var height = image.attributes.height.value;
+      var ratio = width / height;
+      container.style.flex = ratio + ' 1 0%';
+    })
+  </script>
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+    </script>
+  <script type="text/javascript" src="https://bitpay.com/blog/assets/built/jquery.fitvids.js?v=db0162a6bf"></script>
+
+  <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('#reading-progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+
+});
+</script>
+
+
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5M7ZP96"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.12.0/tocbot.min.js" integrity="sha512-oD3xGN8YTxenx6tdS4D/RKqO4OtORBQtAb2/FseM17GGMIi6jMwKUBc8duX4A5RwMOGGXoFBZrsqbOk8GpXFgQ==" crossorigin="anonymous"></script>
+<script>
+    tocbot.init({
+        tocSelector: '.toc',
+        contentSelector: '.post-content',
+        hasInnerContainers: true
+    });
+</script>
+
+<script type='text/javascript'>
+  $( document ).ready(function() {
+  	$( "a[href*='?xgtab&']" ).attr("target","moredetail");
+  });
+</script>
+ <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "Is it safe to share my crypto wallet address?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. You are free to safely share your crypto wallet address, either directly with an individual or posted online. However, keep in mind that information associated with a wallet address, including balances and transaction history, is publicly available on the blockchain."
+    }
+  },{
+    "@type": "Question",
+    "name": "Is my public key the same as my wallet address?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "They’re related, but not the same. When a crypto wallet is created, it generates a pair of keys, one public and one private. The public key essentially verifies ownership of a particular wallet, while the private key is used to digitally sign transactions. Wallet addresses are derived from a wallet’s public key through a process called hashing, where a string of text is condensed and formatted into a specific length."
+    }
+  },{
+    "@type": "Question",
+    "name": "Are Bitcoin addresses public information?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Since all Bitcoin transactions are recorded on a public blockchain, any user can view the balance or transaction history for any Bitcoin address. However, there’s no way to access the funds without the corresponding private key. Additionally, as long as there is no other personal information tying you to a wallet address, your identity can’t be uncovered simply from a crypto address."
+    }
+  },{
+    "@type": "Question",
+    "name": "Can Bitcoin be stolen if someone has my wallet address?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. Your wallet address is derived from your public key, which in turn is generated from your private key. However, these equations only work in one direction. It would be virtually impossible, for instance, to divine someone’s private key even if you had access to both their wallet address and public key."
+    }
+  },{
+    "@type": "Question",
+    "name": "Why does my wallet address keep changing? Will my old wallet address still work? Do addresses expire?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "When poring over your Bitcoin transaction history, you may notice your wallet address has changed over time. This might make new crypto users nervous, but it’s just a security feature. Many wallets and exchanges automatically generate a new address for every transaction, and most crypto wallets are actually able to manage hundreds of Bitcoin addresses simultaneously. Any previously used addresses remain permanently connected to your wallet and can still be used to send or receive funds. However, continuing to use them could compromise your privacy and make your blockchain activity more easily tracked. It’s worth noting that these address changes only happen with cryptocurrencies on the Bitcoin blockchain, such as Bitcoin Cash (BCH), Litecoin (LTC) and Dogecoin (DOGE)."
+    }
+  },{
+    "@type": "Question",
+    "name": "What is a change/refund address?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "When spending fiat currency, if you pay for a $15 item with a $20 bill, you’re owed $5 in change. The same principle applies when spending crypto, where the amount paid minus the amount owed gives you your change. In crypto transactions, the sender receives any change due via a new change address generated by their wallet."
+    }
+  }]
+}
+</script>
+
+</body>
+
+</html>
