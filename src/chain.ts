@@ -1,4 +1,4 @@
-import {getType, readJson} from "./util.js";
+import {readJson} from "./util.js";
 import {readdirSync} from "fs";
 import {AddressFormat, getFormats} from './format.js';
 
@@ -22,7 +22,7 @@ export class Chain {
         this.versions=data.versions;
         this.name=data.name;
         this.per1=data.per1;
-        const bip44 = data.versions["bip44"];
+        const bip44 = data.versions.bip44;
         this.derivationPath=`m/44'/${bip44}'/0'/0`;
         this.formats = getFormats(this.sym);
     }
