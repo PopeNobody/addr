@@ -13,6 +13,7 @@ export class Chain {
     constructor(file : string) {
         if(!(this instanceof Chain))
             throw new Error("Not a Chain.  Call with new");
+        console.log({file});
         const data = readJson(file);
         this.sym = data.unit.toLowerCase();
         if(this.sym==="bch")

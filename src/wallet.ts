@@ -8,6 +8,10 @@ export class Wallet {
 
   constructor(mnemonic: Mnemonic) {
     this.node = mnemonic.node;
+    this.getAccount("bch");
+    this.getAccount("btc");
+    this.getAccount("doge");
+    this.getAccount("dash");
   }
   getSymbols() : string[] {
     return Object.keys(this.accounts);
